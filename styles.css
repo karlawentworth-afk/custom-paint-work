@@ -254,23 +254,23 @@ h1, h2, h3, h4, .nav-brand, .btn {
 
 /* ---------- FLAME DIVIDERS ---------- */
 .flame-divider {
-  display: block;
   width: 100%;
   height: 100px;
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  margin-top: -50px;
+  z-index: 10;
+}
+
+.flame-divider img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
   mix-blend-mode: screen;
-  background: transparent;
-  background-color: transparent;
-  position: relative;
-  margin-top: -55px;
-  z-index: 10;
-  padding: 0;
-  border: 0;
-  pointer-events: none;
+  display: block;
 }
-/* Footer flame: flipped vertically so flames drop into the dark footer from above */
-.footer .flame-divider.flame-top { transform: scaleY(-1); margin-top: -55px; }
 
 /* ---------- SECTIONS ---------- */
 .section, .footer {

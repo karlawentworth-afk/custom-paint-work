@@ -6,7 +6,8 @@
       "Bash(npm install *)",
       "Bash(node _compress.js)",
       "Bash(ls -la *.png *flame*)",
-      "Bash(node -e \"const sharp=require\\('sharp'\\);const fs=require\\('fs'\\);sharp\\('flame-trans.jpg'\\).rotate\\(\\).resize\\({width:1920,withoutEnlargement:true}\\).jpeg\\({quality:75,mozjpeg:true}\\).toFile\\('flame-trans.tmp.jpg'\\).then\\(\\(\\)=>{const b=fs.statSync\\('flame-trans.jpg'\\).size;fs.renameSync\\('flame-trans.tmp.jpg','flame-trans.jpg'\\);const a=fs.statSync\\('flame-trans.jpg'\\).size;console.log\\(\\(b/1048576\\).toFixed\\(2\\)+' MB -> '+\\(a/1048576\\).toFixed\\(2\\)+' MB'\\);}\\);\")"
+      "Bash(node -e \"const sharp=require\\('sharp'\\);const fs=require\\('fs'\\);sharp\\('flame-trans.jpg'\\).rotate\\(\\).resize\\({width:1920,withoutEnlargement:true}\\).jpeg\\({quality:75,mozjpeg:true}\\).toFile\\('flame-trans.tmp.jpg'\\).then\\(\\(\\)=>{const b=fs.statSync\\('flame-trans.jpg'\\).size;fs.renameSync\\('flame-trans.tmp.jpg','flame-trans.jpg'\\);const a=fs.statSync\\('flame-trans.jpg'\\).size;console.log\\(\\(b/1048576\\).toFixed\\(2\\)+' MB -> '+\\(a/1048576\\).toFixed\\(2\\)+' MB'\\);}\\);\")",
+      "Bash(ls -la flame-trans.*)"
     ]
   }
 }
