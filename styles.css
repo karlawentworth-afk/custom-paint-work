@@ -176,7 +176,7 @@ h1, h2, h3, h4, .nav-brand, .btn {
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80');
+  background-image: url('https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?w=1600');
   background-size: cover;
   background-position: center;
   filter: contrast(1.05) saturate(0.85) brightness(0.85);
@@ -193,7 +193,11 @@ h1, h2, h3, h4, .nav-brand, .btn {
 }
 .hero-content {
   position: relative; z-index: 3;
-  text-align: center; color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--cream);
   max-width: 900px;
 }
 .hero-title {
@@ -203,7 +207,7 @@ h1, h2, h3, h4, .nav-brand, .btn {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   line-height: 1;
-  margin-top: 30px;
+  margin-top: 10px;
   color: var(--cream);
   text-shadow:
     3px 3px 0 var(--red),
@@ -433,19 +437,50 @@ h1, h2, h3, h4, .nav-brand, .btn {
   gap: 12px;
 }
 .gallery-item {
-  aspect-ratio: 1 / 1;
-  background-size: cover;
-  background-position: center;
-  border: 3px solid var(--ink);
-  transition: transform 0.3s ease, filter 0.3s ease, border-color 0.3s ease;
-  filter: sepia(35%) contrast(1.05) saturate(0.9);
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--cream);
+  border: 2px dashed var(--red);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
   cursor: pointer;
+  margin: 0;
 }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(30%) contrast(1.05) saturate(0.9);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+/* Hide img when src is empty so placeholder shows through */
+.gallery-item img:not([src]),
+.gallery-item img[src=""] { display: none; }
+
+.gallery-item .placeholder-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  color: var(--red);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  padding: 10px;
+  text-align: center;
+  background: var(--cream);
+}
+/* Hide the placeholder once an image is loaded in the slot */
+.gallery-item img[src]:not([src=""]) + .placeholder-text { display: none; }
+
 .gallery-item:hover {
   transform: scale(1.03);
-  filter: sepia(0%) contrast(1.1);
   border-color: var(--red);
 }
+.gallery-item:hover img { filter: sepia(0%) contrast(1.1); }
 
 /* ---------- FOOTER ---------- */
 .footer {
