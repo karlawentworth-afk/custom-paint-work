@@ -3,3 +3,9 @@
 Thumbs.db
 ~$*
 *.tmp
+
+# Node / local tooling
+node_modules/
+package-lock.json
+package.json
+_compress.js
