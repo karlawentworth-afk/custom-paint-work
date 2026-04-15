@@ -134,15 +134,15 @@ h1, h2, h3, h4, .nav-brand, .btn {
 
 /* ---------- HERO LOGO ---------- */
 .hero-logo {
-  width: 220px;
-  height: 220px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid var(--cream);
+  border: 5px solid var(--cream);
   box-shadow:
-    0 0 0 2px var(--red),
-    0 0 28px rgba(139, 0, 0, 0.75),
-    0 10px 30px rgba(0, 0, 0, 0.55);
+    0 0 0 3px var(--red),
+    0 0 36px rgba(139, 0, 0, 0.8),
+    0 14px 36px rgba(0, 0, 0, 0.6);
   background: var(--cream);
 }
 
@@ -168,11 +168,12 @@ h1, h2, h3, h4, .nav-brand, .btn {
 
 /* ---------- HERO ---------- */
 .hero {
-  min-height: 92vh;
+  min-height: 600px;
   display: flex; align-items: center; justify-content: center;
   padding: 80px 20px;
   overflow: hidden;
   background: var(--wood);
+  border-bottom: 4px solid var(--red);
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
@@ -189,7 +190,7 @@ h1, h2, h3, h4, .nav-brand, .btn {
 .hero-bg-right { background-image: url('car5.jpg'); }
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
 }
 .hero-vignette {
   position: absolute; inset: 0; z-index: 2;
@@ -253,22 +254,28 @@ h1, h2, h3, h4, .nav-brand, .btn {
 
 /* ---------- FLAME DIVIDERS ---------- */
 .flame-divider {
-  display: block;
+  display: flex;
   width: 100%;
-  height: 80px;
-  object-fit: cover;
-  object-position: bottom;
+  height: 100px;
   margin: 0;
   padding: 0;
   border: 0;
-  mix-blend-mode: multiply;
   position: relative;
   z-index: 5;
+  line-height: 0;
 }
-.footer .flame-divider.flame-top {
-  mix-blend-mode: screen;
-  transform: scaleY(-1);
+.flame-divider .flame-half {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+  mix-blend-mode: multiply;
 }
+.flame-divider .flame-half.flame-mirror { transform: scaleX(-1); }
+/* Footer flame sits on dark wood — flip vertically and use screen blend so it's visible */
+.footer .flame-divider.flame-top { transform: scaleY(-1); }
+.footer .flame-divider.flame-top .flame-half { mix-blend-mode: screen; }
 
 /* ---------- SECTIONS ---------- */
 .section, .footer {
@@ -461,8 +468,8 @@ h1, h2, h3, h4, .nav-brand, .btn {
   position: relative;
   aspect-ratio: 4 / 3;
   background: var(--cream);
-  border: 3px solid var(--ink);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: 1px solid var(--red);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   cursor: pointer;
   margin: 0;
@@ -476,9 +483,9 @@ h1, h2, h3, h4, .nav-brand, .btn {
 }
 .gallery-item:hover {
   transform: scale(1.03);
-  border-color: var(--red);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
-.gallery-item:hover img { filter: sepia(0.3); }
+.gallery-item:hover img { filter: sepia(0.4); }
 
 /* ---------- FOOTER ---------- */
 .footer {
