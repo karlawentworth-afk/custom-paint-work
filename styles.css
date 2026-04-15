@@ -254,15 +254,19 @@ h1, h2, h3, h4, .nav-brand, .btn {
 
 /* ---------- FLAME DIVIDERS ---------- */
 .flame-divider {
+  position: relative;
   display: flex;
   width: 100%;
-  height: 100px;
-  margin: 0;
+  height: 60px;
+  margin-top: -40px;
+  margin-bottom: -40px;
   padding: 0;
   border: 0;
-  position: relative;
-  z-index: 5;
+  overflow: hidden;
+  background-color: transparent;
+  z-index: 10;
   line-height: 0;
+  pointer-events: none;
 }
 .flame-divider .flame-half {
   width: 50%;
@@ -271,9 +275,11 @@ h1, h2, h3, h4, .nav-brand, .btn {
   object-position: bottom;
   display: block;
   mix-blend-mode: multiply;
+  filter: contrast(1.2) saturate(1.3);
 }
 .flame-divider .flame-half.flame-mirror { transform: scaleX(-1); }
-/* Footer flame sits on dark wood — flip vertically and use screen blend so it's visible */
+
+/* Footer flame sits on dark wood — flip vertically and use screen blend so flames stay visible */
 .footer .flame-divider.flame-top { transform: scaleY(-1); }
 .footer .flame-divider.flame-top .flame-half { mix-blend-mode: screen; }
 
