@@ -254,34 +254,21 @@ h1, h2, h3, h4, .nav-brand, .btn {
 
 /* ---------- FLAME DIVIDERS ---------- */
 .flame-divider {
-  position: relative;
-  display: flex;
+  display: block;
   width: 100%;
-  height: 60px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: screen;
+  position: relative;
   margin-top: -40px;
-  margin-bottom: -40px;
+  z-index: 10;
   padding: 0;
   border: 0;
-  overflow: hidden;
-  background-color: transparent;
-  z-index: 10;
-  line-height: 0;
   pointer-events: none;
 }
-.flame-divider .flame-half {
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-  object-position: bottom;
-  display: block;
-  mix-blend-mode: multiply;
-  filter: contrast(1.2) saturate(1.3);
-}
-.flame-divider .flame-half.flame-mirror { transform: scaleX(-1); }
-
-/* Footer flame sits on dark wood — flip vertically and use screen blend so flames stay visible */
-.footer .flame-divider.flame-top { transform: scaleY(-1); }
-.footer .flame-divider.flame-top .flame-half { mix-blend-mode: screen; }
+/* Footer flame: flipped vertically so flames drop into the dark footer from above */
+.footer .flame-divider.flame-top { transform: scaleY(-1); margin-top: -40px; }
 
 /* ---------- SECTIONS ---------- */
 .section, .footer {
